@@ -23,10 +23,10 @@ Event-driven Architecture (EDA)
 
 Nota: Para detalhes, como versão e dependências
 da stack ver arquivo build.gradle do projeto.
-# Microserviço relacionado
+## Microserviço relacionado
 * [Checkout](https://github.com/Udinei/ecommerce-checkout-api)
 
-# FrontEnd
+## FrontEnd
 * [Cart](https://github.com/Udinei/ecommerce-checkout-frontend)
 
 # Estrutura do projeto
@@ -45,13 +45,13 @@ da stack ver arquivo build.gradle do projeto.
     - test
         - java
 
-## Atualizando repositorio local Maven
+### Atualizando repositorio local Maven
 <pre>mvn help:evaluate -Dexpression=settings.localRepository
 </pre>
-## Compilando o projeto no terminal
+### Compilando o projeto no terminal
 <pre>gradle build</pre>
 
-## Executando projeto no terminal
+### Executando projeto no terminal
 
 <pre>gradlew booRun</pre>
 
