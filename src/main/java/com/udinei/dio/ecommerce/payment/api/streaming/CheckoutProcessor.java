@@ -10,8 +10,8 @@ import org.springframework.messaging.SubscribableChannel;
  * */
 public interface CheckoutProcessor {
 
-    String  OUTPUT = "payment-paid-output";
-    String  INPUT = "checkout-created-input";
+    String OUTPUT = "payment-paid-output";
+    String INPUT = "checkout-created-input";
 
     @Output(OUTPUT)
     MessageChannel output();

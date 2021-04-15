@@ -1,28 +1,66 @@
-# Read Me First
-The following was discovered as part of building this project:
+# ecommerce-checkout-api-udinei
+Projeto prático de uma solução de e-commerce com
+arquitetura de microserviços EDA (Arquitetura orientada a eventos),
+com a criação de duas aplicações (microserviço) integradas com Apache Kafka,
+e compatibilidade de comunicação utilizando Apache Avro e Schema Registry.
 
-* The original package name 'ecommerce-payment-api-udinei' is invalid and this project uses 'ecommercepaymentapiudinei' instead.
+![](images/arquitetura-sistema.png)
+Event-driven Architecture (EDA)
 
-# Getting Started
+# Statck
+- Java 15
+- Spring Boot 2.4.4
+- Spring Cloud Streams
+- Gradle 6.8
+- PostGresql 11
+- Docker v19.03.8
+- Docker-compose
+- Zookeeper
+- kafka
+- schema-registry
+- Jpa
+- Apache Avro
 
-### Reference Documentation
-For further reference, please consider the following sections:
+Nota: Para detalhes, como versão e dependências
+da stack ver arquivo build.gradle do projeto.
+# Microserviço relacionado
+* [Checkout](https://github.com/Udinei/ecommerce-checkout-api)
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.4.4/gradle-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.4.4/gradle-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.4.4/reference/htmlsingle/#boot-features-developing-web-applications)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.4.4/reference/htmlsingle/#using-boot-devtools)
+# FrontEnd
+* [Cart](https://github.com/Udinei/ecommerce-checkout-frontend)
 
-### Guides
-The following guides illustrate how to use some features concretely:
+# Estrutura do projeto
+- build (gerado pelo apache avro)
+- src
+    - main
+        - java
+            - config
+            - entity
+            - listener
+            - repository
+            - resource.checkout
+            - service
+            - streaming
+            - util
+    - test
+        - java
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+## Atualizando repositorio local Maven
+<pre>mvn help:evaluate -Dexpression=settings.localRepository
+</pre>
+## Compilando o projeto no terminal
+<pre>gradle build</pre>
 
-### Additional Links
-These additional references should also help you:
+## Executando projeto no terminal
 
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+<pre>gradlew booRun</pre>
 
+
+
+# Referências
+* [Live Coding Daniel Hatanaka](https://github.com/hatanakadaniel)
+* [Event-driven Architecture (EDA) usando microserviços ](https://medium.com/@marcelomg21/event-driven-architecture-eda-em-uma-arquitetura-de-micro-servi%C3%A7os-1981614cdd45#)
+* [Apache Kafka](https://www.confluent.io/what-is-apache-kafka)
+* [Google Cloud](https://cloud.google.com/solutions/capturing-change-logs-with-debezium?hl=pt-br)
+* [Blog Emmanuel Neri](https://emmanuelneri.com.br/2019/06/04/kafka-no-spring-boot/)
+* [Blog Atitude Reflexiva](https://atitudereflexiva.wordpress.com/2020/03/05/apache-kafka-introducao/)

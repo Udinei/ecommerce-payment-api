@@ -14,7 +14,6 @@ spring:
       ddl-auto: create-drop
     properties:
       hibernate:
-        #default_schema: payment
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
         show_sql: true
@@ -24,10 +23,10 @@ spring:
             non_contextual_creation: true
   cloud:
     stream:
-      kafka: # brocker
+      kafka:
         binder:
           autoCreateTopics: true
-          brokers: localhost:9092 # porta padroo do kafka
+          brokers: localhost:9092
           configuration:
             value:
               deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
@@ -41,12 +40,12 @@ spring:
           contentType: application/*+avro
           group: ${spring.application.name}
           consumer:
-            use-native-encoding: true # use o da chave configuration: acima
+            use-native-decoding: true
         payment-paid-output:
           destination: streaming.ecommerce.payment.paid
           contentType: application/*+avro
           producer:
-            use-native-decoding: true
+            use-native-encoding: true
   kafka:
     properties:
       schema:
